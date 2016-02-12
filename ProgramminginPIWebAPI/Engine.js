@@ -2,11 +2,10 @@
 
     $.ajax({
         headers: { "Content-Type": "application/json; charset=utf-8", },
-        url: 'https://JDTSQL01/piwebapi',
+        url: webAPIURL,
         dataType: 'json',
         type: 'GET',
     }).done(function (response) {
-                
-       return response
+        return response
     });
-});
+}

@@ -10,8 +10,8 @@
 <body>
     <!--most of this will be in javascript and JQuery.-->
     <script>
-        //this gets the web api stuff we need 
-        // this should be changed to a method which takes in the URL parameter and returns the object based on that ( looking at AF as a more viable option)
+        //TODO: this gets the web api stuff we need 
+        //TODO: this should be changed to a method which takes in the URL parameter and returns the object based on that ( looking at AF as a more viable option)
         $(document).ready(function () {
 
             $.ajax({
@@ -24,6 +24,9 @@
                 console.log(response.Links.AssetServers);
             });
         });
+
+
+        document.write(getJsonData('https://jdtsql01/piwebapi/assetservers'));
 
 
        
