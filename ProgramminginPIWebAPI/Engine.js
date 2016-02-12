@@ -9,7 +9,7 @@ This gets the Server names from the AF Server database for the monitoring (and d
 */
 function getAFServers(webAPIURL) {
 
-    MakeAjaxRequest('GET', webAPIURL, function (data) {
+    MakeAjaxRequest('GET', (baseUrl+webAPIURL), function (data) {
 
         for (var i = 0; i < data.Items.length; i++) {
             document.getElementById("select").innerHTML += "<option id =" + i + ">" + data.Items[i].Name + "</option>";
