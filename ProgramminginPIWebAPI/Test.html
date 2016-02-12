@@ -21,12 +21,12 @@
                 type: 'GET',
             }).done(function (response) {
                 
-                console.log(response.Links.AssetServers);
+                console.log(response.Links);
             });
         });
 
-
-        document.write(getJsonData('https://jdtsql01/piwebapi/assetservers'));
+        var data = getJsonData('https://jdtsql01/piwebapi');
+        console.log(data.Links);
 
 
        

@@ -8,6 +8,7 @@ function getJsonData(webAPIURL) {
         dataType: 'json',
         type: 'GET',
     }).done(function (response) {
+        console.log('RESPONSE FROM JSON METHOD :' + response);
         return response
     });
 }
