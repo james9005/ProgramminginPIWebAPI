@@ -1,4 +1,6 @@
-﻿function getJsonData(webAPIURL) {
+﻿//TODO: methods need to be more general and in reference to the PI AF Structure for server overhauls
+
+function getJsonData(webAPIURL) {
 
     $.ajax({
         headers: { "Content-Type": "application/json; charset=utf-8", },
