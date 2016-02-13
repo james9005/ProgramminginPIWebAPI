@@ -45,6 +45,9 @@ function MakeAjaxRequest(type, url, SuccessCallBack, data) {
 
 //TODO: GET THE CHART FUNCTION WORKING WITH PIWEB API
 
+
+
+
 $(function () {
 
     
