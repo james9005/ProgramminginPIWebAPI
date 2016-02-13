@@ -23,7 +23,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
           apply the skin class to the body tag so the changes take effect.
     -->
     <link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -131,6 +130,52 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <section class="content">
 
           <!-- Your Page Content Here -->
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <p class="text-center">
+                            <strong>Sales: 1 Jan, 2014 - 30 Jul, 2014</strong>
+                        </p>
+                        <div class="chart">
+                            <!-- Sales Chart Canvas -->
+                            <canvas id="salesChart" style="height: 180px;"></canvas>
+                        </div><!-- /.chart-responsive -->
+                    </div><!-- /.col -->
+                    <div class="col-md-4">
+                        <p class="text-center">
+                            <strong>Goal Completion</strong>
+                        </p>
+                        <div class="progress-group">
+                            <span class="progress-text">Add Products to Cart</span>
+                            <span class="progress-number"><b>160</b>/200</span>
+                            <div class="progress sm">
+                                <div class="progress-bar progress-bar-aqua" style="width: 80%"></div>
+                            </div>
+                        </div><!-- /.progress-group -->
+                        <div class="progress-group">
+                            <span class="progress-text">Complete Purchase</span>
+                            <span class="progress-number"><b>310</b>/400</span>
+                            <div class="progress sm">
+                                <div class="progress-bar progress-bar-red" style="width: 80%"></div>
+                            </div>
+                        </div><!-- /.progress-group -->
+                        <div class="progress-group">
+                            <span class="progress-text">Visit Premium Page</span>
+                            <span class="progress-number"><b>480</b>/800</span>
+                            <div class="progress sm">
+                                <div class="progress-bar progress-bar-green" style="width: 80%"></div>
+                            </div>
+                        </div><!-- /.progress-group -->
+                        <div class="progress-group">
+                            <span class="progress-text">Send Inquiries</span>
+                            <span class="progress-number"><b>250</b>/500</span>
+                            <div class="progress sm">
+                                <div class="progress-bar progress-bar-yellow" style="width: 80%"></div>
+                            </div>
+                        </div><!-- /.progress-group -->
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- ./box-body -->
 
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
@@ -217,6 +262,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <!-- AdminLTE App -->
     <script src="dist/js/app.min.js"></script>
+      <script src="plugins/chartjs/Chart.min.js"></script>
+      <script src="Engine.js"></script>
+
 
     <!-- Optionally, you can add Slimscroll and FastClick plugins.
          Both of these plugins are recommended to enhance the
