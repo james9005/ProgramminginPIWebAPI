@@ -122,6 +122,7 @@ $(function updateCPUChart() {
     salesChart.Line(salesChartData, salesChartOptions);
     //update the chart with random data ever 3000 ms (3 seconds).
     //TODO: change this to a WEB API call rather than that of random data.
+    //TODO: work out the timing of the pi web API so this doesnt look stupid. (looking at about 3 minutes maybe?).
     setTimeout(updateCPUChart, 3000);
 });
 updateCPUChart();
