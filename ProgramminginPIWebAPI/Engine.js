@@ -48,7 +48,7 @@ function MakeAjaxRequest(type, url, SuccessCallBack, data) {
 
 
 
-$(function () {
+$(function update() {
 
     
     //-----------------------
@@ -71,7 +71,7 @@ $(function () {
               pointStrokeColor: "#c1c7d1",
               pointHighlightFill: "#fff",
               pointHighlightStroke: "rgb(220,220,220)",
-              data: [65, 59, 80, 81, 56, 55, 40]
+              data: [(Math.random() * 100), (Math.random() * 100), (Math.random() * 100), (Math.random() * 100), (Math.random() * 100), (Math.random() * 100), (Math.random() * 100)]
           },
           {
               label: "Digital Goods",
@@ -81,7 +81,7 @@ $(function () {
               pointStrokeColor: "rgba(60,141,188,1)",
               pointHighlightFill: "#fff",
               pointHighlightStroke: "rgba(60,141,188,1)",
-              data: [28, 48, 40, 19, 86, 27, 90]
+              data: [(Math.random() * 100), (Math.random() * 100), (Math.random() * 100), (Math.random() * 100), (Math.random() * 100), (Math.random() * 100), (Math.random() * 100)]
           }
         ]
     };
@@ -122,12 +122,15 @@ $(function () {
         //Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
         maintainAspectRatio: true,
         //Boolean - whether to make the chart responsive to window resizing
-        responsive: true
+        responsive: true,
+        animation: false
     };
 
     //Create the line chart
     salesChart.Line(salesChartData, salesChartOptions);
+    setTimeout(update, 3000);
 });
+update();
 
 //---------------------------
 //- END MONTHLY SALES CHART -
