@@ -19,9 +19,6 @@ function getAFServers(webAPIURL) {
 }
 
 
-
-
-
 /**
 The Make Ajax Request returns a data object (JSON format) back to the caller
 */
@@ -41,20 +38,15 @@ function MakeAjaxRequest(type, url, SuccessCallBack, data) {
     });
 }
 
-
-
 //TODO: GET THE CHART FUNCTION WORKING WITH PIWEB API
 
 
 
-
-$(function update() {
-
+/** 
+The updateCPUChart function 
+*/
+$(function updateCPUChart() {
     
-    //-----------------------
-    //- MONTHLY SALES CHART -
-    //-----------------------
-
     // Get context with jQuery - using jQuery's .get() method.
     var salesChartCanvas = $("#salesChart").get(0).getContext("2d");
     // This will get the first returned node in the jQuery collection.
@@ -128,10 +120,9 @@ $(function update() {
 
     //Create the line chart
     salesChart.Line(salesChartData, salesChartOptions);
-    setTimeout(update, 3000);
+    //update the chart with random data ever 3000 ms (3 seconds).
+    //TODO: change this to a WEB API call rather than that of random data.
+    setTimeout(updateCPUChart, 3000);
 });
-update();
+updateCPUChart();
 
-//---------------------------
-//- END MONTHLY SALES CHART -
-//---------------------------
