@@ -43,7 +43,7 @@ function MakeAjaxRequest(type, url, SuccessCallBack, data) {
 
 
 /** 
-The updateCPUChart function 
+The updateCPUChart function update the large CPU area within the main area of the page.
 */
 $(function updateCPUChart() {
     
