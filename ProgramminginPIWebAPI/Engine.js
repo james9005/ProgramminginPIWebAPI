@@ -5,18 +5,6 @@ TODO: add method to be able to change the hardware statistics at pseduorandom (j
  
 */
 
-/**
-TODO: add method to change the color of the progress group (based on the percentage of the current data) 
---- <50% = green
---- <75% && >50% = yellow
---- >75% = red
---- display warning if over 95%
-
-*/
-
-
-
-
 //Declares the base URL
 var baseUrl = "https://JDTSQL01/piwebapi";
 
