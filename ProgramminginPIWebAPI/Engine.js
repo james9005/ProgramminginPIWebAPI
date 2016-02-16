@@ -1,7 +1,8 @@
 ﻿//The engine class sorts out the calls to the PI WEB API.
 
 /**
-TODO: add method to be able to change the 
+TODO: add method to be able to change the hardware statistics at pseduorandom (just like the charts JS Call.)
+ 
 */
 
 /**
@@ -62,7 +63,8 @@ function MakeAjaxRequest(type, url, SuccessCallBack, data) {
 /** 
 The updateCPUChart function update the large CPU area within the main area of the page.
 */
-$(function updateCPUChart() {
+$(
+function updateCPUChart() {
 
     // Get context with jQuery - using jQuery's .get() method.
     var salesChartCanvas = $("#salesChart").get(0).getContext("2d");
@@ -146,7 +148,7 @@ $(function updateCPUChart() {
 });
 
 
-function update( buttonStr) {
+function updateHardware( buttonStr) {
 
     alert("you pressed the " + buttonStr);
 
