@@ -173,8 +173,20 @@ function updateRamHw() {
     setTimeout(updateRamHw, 3000);
 }
 
-function updateHardware() {
+function updateAllHardware() {
+    // RAM
 
+
+
+    //C:/
+
+
+
+    //D:/
+
+
+
+    //Other
 }
 
 /**
