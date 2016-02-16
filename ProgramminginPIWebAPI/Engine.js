@@ -38,7 +38,9 @@ function MakeAjaxRequest(type, url, SuccessCallBack, data) {
     });
 }
 
-//TODO: GET THE CHART FUNCTION WORKING WITH PIWEB API
+
+
+//TODO: GET THE CHART FUNCTION WORKING WITH PIWEB API ( pulling from GET request)
 
 
 
