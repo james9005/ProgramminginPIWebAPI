@@ -147,9 +147,9 @@ $(
         //TODO: change this to a WEB API call rather than that of random data.
         //TODO: work out the timing of the pi web API so this doesnt look stupid. (looking at about 3 minutes maybe?).
         setTimeout(updateCPUChart, 3000);
-        
+
     }
-     
+
 );
 
 
@@ -161,32 +161,46 @@ function printHardware(buttonStr) {
 }
 
 //make this update hardware rather than just ram
-function updateRamHw() {
+//function updateRamHw() {
 
 
 
-    var randomValue = (Math.random() * 100);
-    //alert(checkHardwareStatus(randomValue));
-    document.getElementById("ramUsageValue").style.width = randomValue + '%';
-    document.getElementById("ramUsageValue").setAttribute("class", "progress " + checkHardwareStatus(randomValue));
+//    var randomValue = (Math.random() * 100);
+//    //alert(checkHardwareStatus(randomValue));
+//    document.getElementById("ramUsageValue").style.width = randomValue + '%';
+//    document.getElementById("ramUsageValue").setAttribute("class", "progress " + checkHardwareStatus(randomValue));
 
-    setTimeout(updateRamHw, 3000);
-}
+//    setTimeout(updateRamHw, 3000);
+//}
 
 function updateAllHardware() {
-    // RAM
+    var randomValue = (Math.random() * 100);
 
+    // RAM
+    //these values will be replaced with values from the PIWebAPI
+    var currentValue = 250;
+    var maxValue = 1000;
+    var units = "GB";
+    document.getElementById("ramUsage").innerHTML = (currentValue + " / " + maxValue + " " + units);
+    document.getElementById("ramUsageValue").style.width = ((currentValue / maxValue) * 100) + '%';
+    document.getElementById("ramUsageValue").setAttribute("class", "progress " + checkHardwareStatus(currentValue));
 
 
     //C:/
+    //these values will be replaced with values from the PIWebAPI
 
 
 
     //D:/
+    //these values will be replaced with values from the PIWebAPI
 
 
 
     //Other
+    //these values will be replaced with values from the PIWebAPI
+
+    setTimeout(updateAllHardware, 3000);
+
 }
 
 /**
@@ -203,5 +217,5 @@ function checkHardwareStatus(percent) {
         return "progress-bar-red";
     }
 }
-
-updateRamHw();
+updateAllHardware();
+//updateRamHw();
