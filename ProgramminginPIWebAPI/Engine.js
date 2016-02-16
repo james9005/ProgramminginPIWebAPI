@@ -1,5 +1,17 @@
 ﻿//The engine class sorts out the calls to the PI WEB API.
 
+/**TODO: add method to change the color of the progress group (based on the percentage of the current data) 
+--- <50% = green
+--- <75% && >50% = yellow
+--- >75% = red
+--- display warning if over 95%
+
+*/
+
+//TODO: change the hardware section to do something when clicked
+
+
+
 //Declares the base URL
 var baseUrl = "https://JDTSQL01/piwebapi";
 
@@ -40,15 +52,12 @@ function MakeAjaxRequest(type, url, SuccessCallBack, data) {
 
 
 
-//TODO: GET THE CHART FUNCTION WORKING WITH PIWEB API ( pulling from GET request)
-
-
-
+//TODO: GET THE CHART FUNCTION WORKING WITH PIWEB API (pulling from GET request)
 /** 
 The updateCPUChart function update the large CPU area within the main area of the page.
 */
 $(function updateCPUChart() {
-    
+
     // Get context with jQuery - using jQuery's .get() method.
     var salesChartCanvas = $("#salesChart").get(0).getContext("2d");
     // This will get the first returned node in the jQuery collection.
@@ -129,5 +138,11 @@ $(function updateCPUChart() {
     //TODO: work out the timing of the pi web API so this doesnt look stupid. (looking at about 3 minutes maybe?).
     setTimeout(updateCPUChart, 3000);
 });
-updateCPUChart();
+
+
+function update( buttonStr) {
+
+    alert("you pressed the " + buttonStr);
+
+}
 
