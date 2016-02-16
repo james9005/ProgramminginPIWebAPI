@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- saved from url=(0168)https://jdtsql01/piwebapi/streams/A0E5JhvKQzPtUy9eDHPqXqv3QvW9QeZjR5RGAwQAMKQjVsgukX7-7CtgVk3ID134n2ktgSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkdcSkRUU1FMMDF8U0lOVVNPSUQ/value -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>PI Web API</title>
+        <script>
+            window.onload = function () {
+                var response = document.getElementById("response");
+                response.innerHTML = response.innerHTML.replace(/"(http[^"]+)/g, "\"<a href='$1'>$1</a>");
+                response.innerHTML = response.innerHTML.replace(/'(http[^']+)/g, "'<a href='$1'>$1</a>");
+            };
+        </script>
+    <style type="text/css"></style></head>
+    <body>
+        <div style="float: left; font-family: monospace; font-size: 14px; margin-bottom: 5px; width: 90%;">
+            Help pages:
+            <a href="https://jdtsql01/piwebapi/help" target="_blank">PI Web API Help</a> &gt;
+            <a href="https://jdtsql01/piwebapi/help/controllers/stream" target="_blank">Stream</a> &gt;
+            <a href="https://jdtsql01/piwebapi/help/controllers/stream/actions/getvalue" target="_blank">GetValue</a>
+        </div>
+        <hr style="clear: both;">
+        <pre id="response">{
+  "Timestamp": "2016-02-16T23:33:46Z",
+  "Value": 38.652744293212891,
+  "UnitsAbbreviation": "",
+  "Good": true,
+  "Questionable": false,
+  "Substituted": false
+}</pre>
+    
+
+</body></html>
