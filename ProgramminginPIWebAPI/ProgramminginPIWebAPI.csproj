@@ -880,6 +880,11 @@
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="PIWebAPI JSON Files\AF Attribute 2.json" />
+    <Content Include="PIWebAPI JSON Files\AF Attribute.json" />
+    <Content Include="PIWebAPI JSON Files\PI Web API.json" />
+    <Content Include="PIWebAPI JSON Files\sinusoid.json" />
+    <Content Include="PIWebAPI JSON Files\value.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
