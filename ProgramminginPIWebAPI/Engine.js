@@ -160,7 +160,6 @@ function printHardware(buttonStr) {
 
 }
 
-
 function updateAllHardware() {
     var randomValue = (Math.random() * 100);
 
