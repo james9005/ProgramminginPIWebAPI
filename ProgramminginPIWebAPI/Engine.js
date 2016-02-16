@@ -17,7 +17,8 @@ var baseUrl = "https://JDTSQL01/piwebapi";
 
 
 /**
-This gets the Server names from the AF Server database for the monitoring (and displays them in the select box).
+This gets the Server names from the AF Server database for the monitoring (and displays them in a select box with the id of select).
+TODO: change this method to actually do something.... the MakeAjaxRequest almost makes it redundant as most things can be implemented via <Script> tags.
 */
 function getAFServers(webAPIURL) {
 
