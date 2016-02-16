@@ -192,6 +192,13 @@ function updateAllHardware() {
     //these values will be replaced with values from the PIWebAPI
 
 
+    var currentDValue = 1433;
+    var maxDValue = 5000;
+    var dUnits = "GB";
+
+    document.getElementById("dUsage").innerHTML = (currentDValue + " / " + maxDValue + " " + dUnits);
+    document.getElementById("dUsageValue").style.width = ((currentDValue / maxDValue) * 100) + '%';
+    document.getElementById("dUsageValue").setAttribute("class", "progress " + checkHardwareStatus(currentDValue, maxDValue));
 
     //Other
     //these values will be replaced with values from the PIWebAPI
