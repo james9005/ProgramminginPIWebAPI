@@ -55,7 +55,7 @@ $(function updateCPUChart() {
     var salesChart = new Chart(salesChartCanvas);
 
     var salesChartData = {
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        labels: ["09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00"],
         datasets: [
           {
               label: "Electronics",
@@ -65,6 +65,7 @@ $(function updateCPUChart() {
               pointStrokeColor: "#c1c7d1",
               pointHighlightFill: "#fff",
               pointHighlightStroke: "rgb(220,220,220)",
+              //fill with random data.
               data: [(Math.random() * 100), (Math.random() * 100), (Math.random() * 100), (Math.random() * 100), (Math.random() * 100), (Math.random() * 100), (Math.random() * 100)]
           },
           {
@@ -75,6 +76,7 @@ $(function updateCPUChart() {
               pointStrokeColor: "rgba(60,141,188,1)",
               pointHighlightFill: "#fff",
               pointHighlightStroke: "rgba(60,141,188,1)",
+              //fill with random data
               data: [(Math.random() * 100), (Math.random() * 100), (Math.random() * 100), (Math.random() * 100), (Math.random() * 100), (Math.random() * 100), (Math.random() * 100)]
           }
         ]
