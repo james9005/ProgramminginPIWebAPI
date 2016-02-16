@@ -14,7 +14,9 @@ TODO: add method to change the color of the progress group (based on the percent
 
 */
 
-//TODO: change the hardware section to do something when clicked
+//TODO: change the hardware section to do something when clicked (50% complete) --
+
+//TODO: 
 
 
 
