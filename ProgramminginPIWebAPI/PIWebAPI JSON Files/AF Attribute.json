@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!-- saved from url=(0138)https://jdtsql01/piwebapi/elements/E05JhvKQzPtUy9eDHPqXqv3QnC15Pb3R5RGAwgAMKQjVsgSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkdcSkRUUEkwMQ/attributes -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>PI Web API</title>
+        <script>
+            window.onload = function () {
+                var response = document.getElementById("response");
+                response.innerHTML = response.innerHTML.replace(/"(http[^"]+)/g, "\"<a href='$1'>$1</a>");
+                response.innerHTML = response.innerHTML.replace(/'(http[^']+)/g, "'<a href='$1'>$1</a>");
+            };
+        </script>
+    <style type="text/css"></style></head>
+    <body>
+        <div style="float: left; font-family: monospace; font-size: 14px; margin-bottom: 5px; width: 90%;">
+            Help pages:
+            <a href="https://jdtsql01/piwebapi/help" target="_blank">PI Web API Help</a> &gt;
+            <a href="https://jdtsql01/piwebapi/help/controllers/attribute" target="_blank">Attribute</a> &gt;
+            <a href="https://jdtsql01/piwebapi/help/controllers/attribute/actions/getattributes" target="_blank">GetAttributes</a>
+        </div>
+        <hr style="clear: both;">
+        <pre id="response">{
+  "Links": {
+    "First": "<a href="https://jdtsql01/piwebapi/elements/E05JhvKQzPtUy9eDHPqXqv3QnC15Pb3R5RGAwgAMKQjVsgSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkdcSkRUUEkwMQ/attributes?startIndex=0">https://jdtsql01/piwebapi/elements/E05JhvKQzPtUy9eDHPqXqv3QnC15Pb3R5RGAwgAMKQjVsgSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkdcSkRUUEkwMQ/attributes?startIndex=0</a>",
+    "Last": "<a href="https://jdtsql01/piwebapi/elements/E05JhvKQzPtUy9eDHPqXqv3QnC15Pb3R5RGAwgAMKQjVsgSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkdcSkRUUEkwMQ/attributes?startIndex=0">https://jdtsql01/piwebapi/elements/E05JhvKQzPtUy9eDHPqXqv3QnC15Pb3R5RGAwgAMKQjVsgSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkdcSkRUUEkwMQ/attributes?startIndex=0</a>"
+  },
+  "Items": [
+    {
+      "WebId": "A0E5JhvKQzPtUy9eDHPqXqv3QnC15Pb3R5RGAwgAMKQjVsgmwfSv5WtgVk3Iz134n2ktgSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkdcSkRUUEkwMXxTSU5VU09JRA",
+      "Id": "bfd2079b-ad95-5981-3723-3d77e27da4b6",
+      "Name": "Sinusoid",
+      "Description": "",
+      "Path": "\\\\JDTSQL01\\Server Monitoring\\JDTPI01|Sinusoid",
+      "Type": "Double",
+      "TypeQualifier": "",
+      "DefaultUnitsName": "",
+      "DataReferencePlugIn": "PI Point",
+      "ConfigString": "\\\\JDTSQL01?691f9978-e81c-4e53-afd4-c0cebdc1cf1f\\SINUSOID",
+      "IsConfigurationItem": false,
+      "IsExcluded": false,
+      "IsHidden": false,
+      "CategoryNames": [],
+      "Step": false,
+      "Links": {
+        "Self": "<a href="https://jdtsql01/piwebapi/attributes/A0E5JhvKQzPtUy9eDHPqXqv3QnC15Pb3R5RGAwgAMKQjVsgmwfSv5WtgVk3Iz134n2ktgSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkdcSkRUUEkwMXxTSU5VU09JRA">https://jdtsql01/piwebapi/attributes/A0E5JhvKQzPtUy9eDHPqXqv3QnC15Pb3R5RGAwgAMKQjVsgmwfSv5WtgVk3Iz134n2ktgSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkdcSkRUUEkwMXxTSU5VU09JRA</a>",
+        "Attributes": "<a href="https://jdtsql01/piwebapi/attributes/A0E5JhvKQzPtUy9eDHPqXqv3QnC15Pb3R5RGAwgAMKQjVsgmwfSv5WtgVk3Iz134n2ktgSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkdcSkRUUEkwMXxTSU5VU09JRA/attributes">https://jdtsql01/piwebapi/attributes/A0E5JhvKQzPtUy9eDHPqXqv3QnC15Pb3R5RGAwgAMKQjVsgmwfSv5WtgVk3Iz134n2ktgSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkdcSkRUUEkwMXxTSU5VU09JRA/attributes</a>",
+        "Element": "<a href="https://jdtsql01/piwebapi/elements/E05JhvKQzPtUy9eDHPqXqv3QnC15Pb3R5RGAwgAMKQjVsgSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkdcSkRUUEkwMQ">https://jdtsql01/piwebapi/elements/E05JhvKQzPtUy9eDHPqXqv3QnC15Pb3R5RGAwgAMKQjVsgSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkdcSkRUUEkwMQ</a>",
+        "Template": "<a href="https://jdtsql01/piwebapi/attributetemplates/t0E5JhvKQzPtUy9eDHPqXqv3Q4GIHV-Ou40W1LjG7sCSwqAByqrgih8ZEi34T17y3VxBASkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkdcRUxFTUVOVFRFTVBMQVRFU1tTRVJWRVJdfFNJTlVTT0lE">https://jdtsql01/piwebapi/attributetemplates/t0E5JhvKQzPtUy9eDHPqXqv3Q4GIHV-Ou40W1LjG7sCSwqAByqrgih8ZEi34T17y3VxBASkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkdcRUxFTUVOVFRFTVBMQVRFU1tTRVJWRVJdfFNJTlVTT0lE</a>",
+        "Value": "<a href="https://jdtsql01/piwebapi/streams/A0E5JhvKQzPtUy9eDHPqXqv3QnC15Pb3R5RGAwgAMKQjVsgmwfSv5WtgVk3Iz134n2ktgSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkdcSkRUUEkwMXxTSU5VU09JRA/value">https://jdtsql01/piwebapi/streams/A0E5JhvKQzPtUy9eDHPqXqv3QnC15Pb3R5RGAwgAMKQjVsgmwfSv5WtgVk3Iz134n2ktgSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkdcSkRUUEkwMXxTSU5VU09JRA/value</a>",
+        "InterpolatedData": "<a href="https://jdtsql01/piwebapi/streams/A0E5JhvKQzPtUy9eDHPqXqv3QnC15Pb3R5RGAwgAMKQjVsgmwfSv5WtgVk3Iz134n2ktgSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkdcSkRUUEkwMXxTSU5VU09JRA/interpolated">https://jdtsql01/piwebapi/streams/A0E5JhvKQzPtUy9eDHPqXqv3QnC15Pb3R5RGAwgAMKQjVsgmwfSv5WtgVk3Iz134n2ktgSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkdcSkRUUEkwMXxTSU5VU09JRA/interpolated</a>",
+        "RecordedData": "<a href="https://jdtsql01/piwebapi/streams/A0E5JhvKQzPtUy9eDHPqXqv3QnC15Pb3R5RGAwgAMKQjVsgmwfSv5WtgVk3Iz134n2ktgSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkdcSkRUUEkwMXxTSU5VU09JRA/recorded">https://jdtsql01/piwebapi/streams/A0E5JhvKQzPtUy9eDHPqXqv3QnC15Pb3R5RGAwgAMKQjVsgmwfSv5WtgVk3Iz134n2ktgSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkdcSkRUUEkwMXxTSU5VU09JRA/recorded</a>",
+        "PlotData": "<a href="https://jdtsql01/piwebapi/streams/A0E5JhvKQzPtUy9eDHPqXqv3QnC15Pb3R5RGAwgAMKQjVsgmwfSv5WtgVk3Iz134n2ktgSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkdcSkRUUEkwMXxTSU5VU09JRA/plot">https://jdtsql01/piwebapi/streams/A0E5JhvKQzPtUy9eDHPqXqv3QnC15Pb3R5RGAwgAMKQjVsgmwfSv5WtgVk3Iz134n2ktgSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkdcSkRUUEkwMXxTSU5VU09JRA/plot</a>",
+        "SummaryData": "<a href="https://jdtsql01/piwebapi/streams/A0E5JhvKQzPtUy9eDHPqXqv3QnC15Pb3R5RGAwgAMKQjVsgmwfSv5WtgVk3Iz134n2ktgSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkdcSkRUUEkwMXxTSU5VU09JRA/summary">https://jdtsql01/piwebapi/streams/A0E5JhvKQzPtUy9eDHPqXqv3QnC15Pb3R5RGAwgAMKQjVsgmwfSv5WtgVk3Iz134n2ktgSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkdcSkRUUEkwMXxTSU5VU09JRA/summary</a>",
+        "EndValue": "<a href="https://jdtsql01/piwebapi/streams/A0E5JhvKQzPtUy9eDHPqXqv3QnC15Pb3R5RGAwgAMKQjVsgmwfSv5WtgVk3Iz134n2ktgSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkdcSkRUUEkwMXxTSU5VU09JRA/end">https://jdtsql01/piwebapi/streams/A0E5JhvKQzPtUy9eDHPqXqv3QnC15Pb3R5RGAwgAMKQjVsgmwfSv5WtgVk3Iz134n2ktgSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkdcSkRUUEkwMXxTSU5VU09JRA/end</a>",
+        "Point": "<a href="https://jdtsql01/piwebapi/points/P0eJkfaRzoU06v1MDOvcHPHwAQAAAASkRUU1FMMDFcU0lOVVNPSUQ">https://jdtsql01/piwebapi/points/P0eJkfaRzoU06v1MDOvcHPHwAQAAAASkRUU1FMMDFcU0lOVVNPSUQ</a>",
+        "Categories": "<a href="https://jdtsql01/piwebapi/attributes/A0E5JhvKQzPtUy9eDHPqXqv3QnC15Pb3R5RGAwgAMKQjVsgmwfSv5WtgVk3Iz134n2ktgSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkdcSkRUUEkwMXxTSU5VU09JRA/categories">https://jdtsql01/piwebapi/attributes/A0E5JhvKQzPtUy9eDHPqXqv3QnC15Pb3R5RGAwgAMKQjVsgmwfSv5WtgVk3Iz134n2ktgSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkdcSkRUUEkwMXxTSU5VU09JRA/categories</a>"
+      }
+    }
+  ]
+}</pre>
+    
+
+</body></html>

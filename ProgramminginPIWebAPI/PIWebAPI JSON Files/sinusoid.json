@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!-- saved from url=(0186)https://jdtsql01/piwebapi/streams/A0E5JhvKQzPtUy9eDHPqXqv3QvW9QeZjR5RGAwQAMKQjVsgukX7-7CtgVk3ID134n2ktgSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkdcSkRUU1FMMDF8U0lOVVNPSUQ/recorded?startTime=*-7d -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>PI Web API</title>
+        <script>
+            window.onload = function () {
+                var response = document.getElementById("response");
+                response.innerHTML = response.innerHTML.replace(/"(http[^"]+)/g, "\"<a href='$1'>$1</a>");
+                response.innerHTML = response.innerHTML.replace(/'(http[^']+)/g, "'<a href='$1'>$1</a>");
+            };
+        </script>
+    <style type="text/css"></style></head>
+    <body>
+        <div style="float: left; font-family: monospace; font-size: 14px; margin-bottom: 5px; width: 90%;">
+            Help pages:
+            <a href="https://jdtsql01/piwebapi/help" target="_blank">PI Web API Help</a> &gt;
+            <a href="https://jdtsql01/piwebapi/help/controllers/stream" target="_blank">Stream</a> &gt;
+            <a href="https://jdtsql01/piwebapi/help/controllers/stream/actions/getrecorded" target="_blank">GetRecorded</a>
+        </div>
+        <hr style="clear: both;">
+        <pre id="response">{
+  "Links": {},
+  "Items": [
+    {
+      "Timestamp": "2016-02-12T12:28:57Z",
+      "Value": {
+        "Name": "Shutdown",
+        "Value": 254,
+        "IsSystem": true
+      },
+      "UnitsAbbreviation": "",
+      "Good": false,
+      "Questionable": false,
+      "Substituted": false
+    },
+    {
+      "Timestamp": "2016-02-12T12:31:02Z",
+      "Value": 63.375656127929688,
+      "UnitsAbbreviation": "",
+      "Good": true,
+      "Questionable": false,
+      "Substituted": false
+    },
+    {
+      "Timestamp": "2016-02-12T12:52:02Z",
+      "Value": 71.931365966796875,
+      "UnitsAbbreviation": "",
+      "Good": true,
+      "Questionable": false,
+      "Substituted": false
+    },
+    {
+      "Timestamp": "2016-02-12T12:52:24Z",
+      "Value": {
+        "Name": "Shutdown",
+        "Value": 254,
+        "IsSystem": true
+      },
+      "UnitsAbbreviation": "",
+      "Good": false,
+      "Questionable": false,
+      "Substituted": false
+    },
+    {
+      "Timestamp": "2016-02-12T12:56:50Z",
+      "Value": 73.793739318847656,
+      "UnitsAbbreviation": "",
+      "Good": true,
+      "Questionable": false,
+      "Substituted": false
+    },
+    {
+      "Timestamp": "2016-02-12T14:09:50Z",
+      "Value": 95.284469604492187,
+      "UnitsAbbreviation": "",
+      "Good": true,
+      "Questionable": false,
+      "Substituted": false
+    },
+    {
+      "Timestamp": "2016-02-12T15:11:20Z",
+      "Value": 99.755691528320312,
+      "UnitsAbbreviation": "",
+      "Good": true,
+      "Questionable": false,
+      "Substituted": false
+    },
+    {
+      "Timestamp": "2016-02-12T16:06:50Z",
+      "Value": 91.734588623046875,
+      "UnitsAbbreviation": "",
+      "Good": true,
+      "Questionable": false,
+      "Substituted": false
+    },
+    {
+      "Timestamp": "2016-02-12T16:09:29Z",
+      "Value": {
+        "Name": "Shutdown",
+        "Value": 254,
+        "IsSystem": true
+      },
+      "UnitsAbbreviation": "",
+      "Good": false,
+      "Questionable": false,
+      "Substituted": false
+    },
+    {
+      "Timestamp": "2016-02-12T17:10:46Z",
+      "Value": 70.827621459960937,
+      "UnitsAbbreviation": "",
+      "Good": true,
+      "Questionable": false,
+      "Substituted": false
+    },
+    {
+      "Timestamp": "2016-02-12T19:28:16Z",
+      "Value": 15.183796882629395,
+      "UnitsAbbreviation": "",
+      "Good": true,
+      "Questionable": false,
+      "Substituted": false
+    },
+    {
+      "Timestamp": "2016-02-12T20:31:46Z",
+      "Value": 1.5100592374801636,
+      "UnitsAbbreviation": "",
+      "Good": true,
+      "Questionable": false,
+      "Substituted": false
+    },
+    {
+      "Timestamp": "2016-02-12T21:42:40Z",
+      "Value": 3.4258322715759277,
+      "UnitsAbbreviation": "",
+      "Good": true,
+      "Questionable": false,
+      "Substituted": false
+    },
+    {
+      "Timestamp": "2016-02-12T22:30:46Z",
+      "Value": 14.881626129150391,
+      "UnitsAbbreviation": "",
+      "Good": true,
+      "Questionable": false,
+      "Substituted": false
+    },
+    {
+      "Timestamp": "2016-02-12T23:34:46Z",
+      "Value": 39.078117370605469,
+      "UnitsAbbreviation": "",
+      "Good": true,
+      "Questionable": false,
+      "Substituted": false
+    },
+    {
+      "Timestamp": "2016-02-13T20:27:55Z",
+      "Value": 1.9470798969268799,
+      "UnitsAbbreviation": "",
+      "Good": true,
+      "Questionable": false,
+      "Substituted": false
+    },
+    {
+      "Timestamp": "2016-02-13T21:00:16Z",
+      "Value": 0.00013426825171336532,
+      "UnitsAbbreviation": "",
+      "Good": true,
+      "Questionable": false,
+      "Substituted": false
+    },
+    {
+      "Timestamp": "2016-02-16T23:26:09Z",
+      "Value": 35.443504333496094,
+      "UnitsAbbreviation": "",
+      "Good": true,
+      "Questionable": false,
+      "Substituted": false
+    },
+    {
+      "Timestamp": "2016-02-16T23:28:46Z",
+      "Value": 36.539482116699219,
+      "UnitsAbbreviation": "",
+      "Good": true,
+      "Questionable": false,
+      "Substituted": false
+    }
+  ],
+  "UnitsAbbreviation": ""
+}</pre>
+    
+
+</body></html>
