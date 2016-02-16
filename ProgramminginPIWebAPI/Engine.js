@@ -154,13 +154,17 @@ $(
 
 
 
-function updateHardware(buttonStr) {
+function printHardware(buttonStr) {
 
     alert("you pressed the " + buttonStr);
 
 }
 
+//make this update hardware rather than just ram
 function updateRamHw() {
+
+
+
     var randomValue = (Math.random() * 100);
     //alert(checkHardwareStatus(randomValue));
     document.getElementById("ramUsageValue").style.width = randomValue + '%';
@@ -169,9 +173,16 @@ function updateRamHw() {
     setTimeout(updateRamHw, 3000);
 }
 
+function updateHardware() {
+
+}
+
+/**
+The checkHardwareStatus looks at the 
+*/
 function checkHardwareStatus(percent) {
     if (percent <= 50) {
-        return "progress-bar-green";;
+        return "progress-bar-green";
     }
     else if (percent > 50 && percent < 75) {
         return "progress-bar-yellow";
