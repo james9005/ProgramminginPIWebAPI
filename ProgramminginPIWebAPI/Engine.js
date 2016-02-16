@@ -177,13 +177,16 @@ function updateAllHardware() {
     var randomValue = (Math.random() * 100);
 
     // RAM
-    //these values will be replaced with values from the PIWebAPI
-    var currentValue = 250;
+    // TODO: these values will be replaced with values from the PIWebAPi -- depending on what server is selected display the change
+
+    var currentValue = 501;
     var maxValue = 1000;
     var units = "GB";
+
+
     document.getElementById("ramUsage").innerHTML = (currentValue + " / " + maxValue + " " + units);
     document.getElementById("ramUsageValue").style.width = ((currentValue / maxValue) * 100) + '%';
-    document.getElementById("ramUsageValue").setAttribute("class", "progress " + checkHardwareStatus(currentValue));
+    document.getElementById("ramUsageValue").setAttribute("class", "progress " + checkHardwareStatus(currentValue,maxValue));
 
 
     //C:/
@@ -204,9 +207,11 @@ function updateAllHardware() {
 }
 
 /**
-The checkHardwareStatus looks at the 
+The checkHardwareStatus looks at the percent of the passed paramaters
 */
-function checkHardwareStatus(percent) {
+function checkHardwareStatus(current, max) {
+
+    var percent = ((current / max) * 100);
     if (percent <= 50) {
         return "progress-bar-green";
     }
@@ -215,6 +220,9 @@ function checkHardwareStatus(percent) {
     }
     else if (percent >= 75) {
         return "progress-bar-red";
+    }
+    else {
+        alert("an error has occured");
     }
 }
 updateAllHardware();
