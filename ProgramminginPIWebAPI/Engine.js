@@ -166,19 +166,26 @@ function updateAllHardware() {
     // RAM
     // TODO: these values will be replaced with values from the PIWebAPi -- depending on what server is selected display the change
 
-    var currentValue = 501;
-    var maxValue = 1000;
-    var units = "GB";
+    var currentRamValue = 4.8;
+    var maxRamValue = 8;
+    var ramUnits = "GB";
 
 
-    document.getElementById("ramUsage").innerHTML = (currentValue + " / " + maxValue + " " + units);
-    document.getElementById("ramUsageValue").style.width = ((currentValue / maxValue) * 100) + '%';
-    document.getElementById("ramUsageValue").setAttribute("class", "progress " + checkHardwareStatus(currentValue,maxValue));
+    document.getElementById("ramUsage").innerHTML = (currentRamValue + " / " + maxRamValue + " " + ramUnits);
+    document.getElementById("ramUsageValue").style.width = ((currentRamValue / maxRamValue) * 100) + '%';
+    document.getElementById("ramUsageValue").setAttribute("class", "progress " + checkHardwareStatus(currentRamValue,maxRamValue));
 
 
     //C:/
     //these values will be replaced with values from the PIWebAPI
 
+    var currentCValue = 566;
+    var maxCValue = 1000;
+    var cUnits = "GB";
+
+    document.getElementById("cUsage").innerHTML = (currentCValue + " / " + maxCValue + " " + cUnits);
+    document.getElementById("cUsageValue").style.width = ((currentCValue / maxCValue) * 100) + '%';
+    document.getElementById("cUsageValue").setAttribute("class", "progress " + checkHardwareStatus(currentCValue, maxCValue));
 
 
     //D:/
@@ -189,6 +196,8 @@ function updateAllHardware() {
     //Other
     //these values will be replaced with values from the PIWebAPI
 
+
+    //sets a timeout for the hardware section to update.
     setTimeout(updateAllHardware, 3000);
 
 }
@@ -209,7 +218,7 @@ function checkHardwareStatus(current, max) {
         return "progress-bar-red";
     }
     else {
-        alert("an error has occured");
+        alert("an error has occured with one or several of the hardware statistics");
     }
 }
 updateAllHardware();
