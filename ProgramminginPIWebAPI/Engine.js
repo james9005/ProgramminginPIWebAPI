@@ -160,18 +160,6 @@ function printHardware(buttonStr) {
 
 }
 
-//make this update hardware rather than just ram
-//function updateRamHw() {
-
-
-
-//    var randomValue = (Math.random() * 100);
-//    //alert(checkHardwareStatus(randomValue));
-//    document.getElementById("ramUsageValue").style.width = randomValue + '%';
-//    document.getElementById("ramUsageValue").setAttribute("class", "progress " + checkHardwareStatus(randomValue));
-
-//    setTimeout(updateRamHw, 3000);
-//}
 
 function updateAllHardware() {
     var randomValue = (Math.random() * 100);
@@ -226,4 +214,3 @@ function checkHardwareStatus(current, max) {
     }
 }
 updateAllHardware();
-//updateRamHw();
