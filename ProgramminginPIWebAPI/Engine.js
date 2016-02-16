@@ -14,9 +14,6 @@ TODO: add method to change the color of the progress group (based on the percent
 
 */
 
-//TODO: change the hardware section to do something when clicked (50% complete) --
-
-//TODO: 
 
 
 
@@ -153,7 +150,7 @@ $(
 );
 
 
-
+//TODO: Work on this
 function printHardware(buttonStr) {
 
     alert("you pressed the " + buttonStr);
@@ -202,6 +199,15 @@ function updateAllHardware() {
 
     //Other
     //these values will be replaced with values from the PIWebAPI
+    //TODO:this should be set to the correct thing remember not math.random
+    var currentOtherValue = Math.round((Math.random()*500));
+    var maxOtherValue = 500;
+    var otherUnits = "GB";
+
+    document.getElementById("otherUsage").innerHTML = (currentOtherValue + " / " + maxOtherValue + " " + otherUnits);
+    document.getElementById("otherUsageValue").style.width = ((currentOtherValue / maxOtherValue) * 100) + '%';
+    document.getElementById("otherUsageValue").setAttribute("class", "progress " + checkHardwareStatus(currentOtherValue, maxOtherValue));
+
 
 
     //sets a timeout for the hardware section to update.
@@ -228,4 +234,7 @@ function checkHardwareStatus(current, max) {
         alert("an error has occured with one or several of the hardware statistics");
     }
 }
+
+
+//call all methods
 updateAllHardware();
