@@ -7,6 +7,7 @@ TODO: add method to be able to change the hardware statistics at pseduorandom (j
 
 //Declares the base URL
 var baseUrl = "https://JDTSQL01/piwebapi";
+var servMonEleUrl = "https://jdtsql01/piwebapi/assetdatabases/D05JhvKQzPtUy9eDHPqXqv3Qdem0i04ALk-N4rffsusiEQSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkc/elements";
 
 
 /**
@@ -136,6 +137,12 @@ function updateCPUChart() {
 }
 
 
+
+function getCurrentValue() {
+    
+    
+
+}
 
 
 //TODO: Work on this
