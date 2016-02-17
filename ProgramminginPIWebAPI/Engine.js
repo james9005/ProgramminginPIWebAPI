@@ -1,4 +1,4 @@
-﻿//The engine class sorts out the calls to the PI WEB API.
+﻿//The engine class sorts out the calls to the PI WEB API and does everything with the Dashboard.html page
 
 /**
 TODO: add method to be able to change the hardware statistics at pseduorandom (just like the charts JS Call.)
@@ -221,6 +221,8 @@ function updateCPUChartRandomData() {
 
 }
 
+
+//TODO work on this function
 function getCurrentValue() {
     
     
