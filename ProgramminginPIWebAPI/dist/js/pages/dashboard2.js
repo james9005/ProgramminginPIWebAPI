@@ -60,7 +60,7 @@ $(function () {
     //Number - Tension of the bezier curve between points
     bezierCurveTension: 0.3,
     //Boolean - Whether to show a dot for each point
-    pointDot: false,
+    pointDot: true,
     //Number - Radius of each point dot in pixels
     pointDotRadius: 4,
     //Number - Pixel width of point dot stroke
