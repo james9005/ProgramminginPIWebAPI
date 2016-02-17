@@ -64,7 +64,6 @@ function updateCPUChart() {
             datavals.push(data.Items[i].Value);
         }
         console.log(datavals.toString());
-        //var data = [(Math.random() * 100), (Math.random() * 100), (Math.random() * 100), (Math.random() * 100), (Math.random() * 100), (Math.random() * 100), (Math.random() * 100)];
         var salesChartData = {
             labels: label,
             datasets: [
@@ -76,7 +75,7 @@ function updateCPUChart() {
                   pointStrokeColor: "#c1c7d1",
                   pointHighlightFill: "#fff",
                   pointHighlightStroke: "rgb(220,220,220)",
-                  //fill with random data.
+                  //fill with Web API data
                   data: datavals
               }
             ]
