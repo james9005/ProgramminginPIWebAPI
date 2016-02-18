@@ -69,8 +69,7 @@ function updateCPUChart() {
         var datavals = [];
 
         var label = [];
-        for (var i = 0; i < data.Items.length; i++)
-        {
+        for (var i = 0; i < data.Items.length; i++) {
             label.push(data.Items[i].Timestamp);
             datavals.push(data.Items[i].Value);
         }
@@ -229,8 +228,8 @@ function updateCPUChartRandomData() {
 
 //TODO work on this function
 function getCurrentValue() {
-    
-    
+
+
     MakeAjaxRequest("GET", exValUrl, function (data) {
 
 
@@ -238,7 +237,7 @@ function getCurrentValue() {
     }
 );
 
-    
+
 
 }
 
@@ -342,7 +341,21 @@ function createSidebarFromAF() {
 
     var data = ["JDTSQL01", "JDTPI01"];
 
-    var node = 
+    //first line of data (needs to be applied to the current HTML URL also.
+
+    var node = document.createElement("LI");
+    node.classList.add("active");
+    var link = document.createElement("a");
+    link.setAttribute("href", ("#" + data[0]));
+
+    node.appendChild(link);
+
+    
+    link.innerHTML = data[0];
+    location.hash = data[0];
+
+    document.getElementById("rightConfigBar").appendChild(node).appendChild(link);
+
 
     for (var i = 1; i <= data.length; i++) {
 
