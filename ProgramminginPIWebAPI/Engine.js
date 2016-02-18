@@ -1,10 +1,6 @@
 ﻿//The engine class sorts out the calls to the PI WEB API and does everything with the Dashboard.html page
 
-//TODO: load the server sidebar
 createSidebarFromAF();
-
-
-
 
 var currentServer = currentServerFromHash();
 
@@ -339,9 +335,11 @@ function createSidebarFromAF() {
 
     //perform AJAX Call for AF Data
 
+    //this is test data  - return all server names from real data.
     var data = ["JDTSQL01", "JDTPI01","CCA-PI-01","CCA-SQL-01", "JDT-UPS-01"];
 
 
+    //should be currently active rather than the first line
     //first line of data (needs to be applied to the current HTML URL also.
     var node = document.createElement("LI");
     node.classList.add("active");
