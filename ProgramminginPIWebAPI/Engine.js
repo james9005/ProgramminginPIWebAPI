@@ -1,7 +1,7 @@
 ﻿//The engine class sorts out the calls to the PI WEB API and does everything with the Dashboard.html page
 
 //TODO: load the server sidebar
-
+createSidebarFromAF();
 
 
 
@@ -329,6 +329,14 @@ function checkHardwareStatus(current, max) {
     }
 }
 
+function createSidebarFromAF() {
+    //create header
+    var headerNode = document.createElement("LI");
+    headerNode.classList.add("header");
+    headerNode.innerHTML = "TESTING"
+
+    document.getElementById("rightConfigBar").appendChild(headerNode);
+}
 
 
 
