@@ -1,5 +1,16 @@
 ﻿//The engine class sorts out the calls to the PI WEB API and does everything with the Dashboard.html page
 
+//TODO: load the server sidebar
+
+
+
+
+
+var currentServer = currentServerFromHash();
+
+
+
+
 //Declares the base URL
 var baseUrl = "https://JDTSQL01/piwebapi";
 var servMonEleUrl = "https://jdtsql01/piwebapi/assetdatabases/D05JhvKQzPtUy9eDHPqXqv3Qdem0i04ALk-N4rffsusiEQSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkc/elements";
@@ -21,6 +32,9 @@ function getAFServers(webAPIURL) {
     });
 }
 
+function currentServerFromHash() {
+    return location.hash;
+}
 
 /**
 The Make Ajax Request returns a data object (JSON format) back to the caller
@@ -40,9 +54,6 @@ function MakeAjaxRequest(type, url, SuccessCallBack, data) {
         })
     });
 }
-
-
-
 
 /** 
 The updateCPUChart function update the large CPU area within the main area of the page.
@@ -239,6 +250,7 @@ function printHardware(buttonStr) {
 
 }
 
+//TODO: update with data from the PIWebAPI
 function updateAllHardware() {
     var randomValue = (Math.random() * 100);
 
@@ -330,6 +342,4 @@ function checkHardwareStatus(current, max) {
 
 updateCPUChartRandomData();
 updateAllHardware();
-
-
 
