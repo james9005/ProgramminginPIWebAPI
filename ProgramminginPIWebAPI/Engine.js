@@ -330,12 +330,24 @@ function checkHardwareStatus(current, max) {
 }
 
 function createSidebarFromAF() {
+
     //create header
     var headerNode = document.createElement("LI");
     headerNode.classList.add("header");
-    headerNode.innerHTML = "TESTING"
+    headerNode.innerHTML = "TESTING";
 
     document.getElementById("rightConfigBar").appendChild(headerNode);
+
+    //perform AJAX Call for AF Data
+
+    var data = ["JDTSQL01", "JDTPI01"];
+
+    var node = 
+
+    for (var i = 1; i <= data.length; i++) {
+
+    }
+
 }
 
 
