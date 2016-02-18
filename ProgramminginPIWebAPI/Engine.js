@@ -333,32 +333,45 @@ function createSidebarFromAF() {
     //create header
     var headerNode = document.createElement("LI");
     headerNode.classList.add("header");
-    headerNode.innerHTML = "TESTING";
+    headerNode.innerHTML = "SERVERS";
 
     document.getElementById("rightConfigBar").appendChild(headerNode);
 
     //perform AJAX Call for AF Data
 
-    var data = ["JDTSQL01", "JDTPI01"];
+    var data = ["JDTSQL01", "JDTPI01","CCA-PI-01","CCA-SQL-01", "JDT-UPS-01"];
+
 
     //first line of data (needs to be applied to the current HTML URL also.
-
     var node = document.createElement("LI");
     node.classList.add("active");
     var link = document.createElement("a");
     link.setAttribute("href", ("#" + data[0]));
-
-    node.appendChild(link);
-
-    
-    link.innerHTML = data[0];
+    //add icons 
+    var icon = document.createElement("i");
+    icon.classList.add("fa");
+    icon.classList.add("fa-server");
+    //add span
+    var span = document.createElement("span");
+    span.innerHTML = data[0];
     location.hash = data[0];
+    node.appendChild(link).appendChild(icon);
+    document.getElementById("rightConfigBar").appendChild(node).appendChild(link).appendChild(span);
 
-    document.getElementById("rightConfigBar").appendChild(node).appendChild(link);
 
-
-    for (var i = 1; i <= data.length; i++) {
-
+    for (var i = 1; i < data.length; i++) {
+        var node = document.createElement("LI");       
+        var link = document.createElement("a");
+        link.setAttribute("href", ("#" + data[i]));
+        //add icons 
+        var icon = document.createElement("i");
+        icon.classList.add("fa");
+        icon.classList.add("fa-server");
+        //add span
+        var span = document.createElement("span");
+        span.innerHTML = data[i];
+        node.appendChild(link).appendChild(icon);
+        document.getElementById("rightConfigBar").appendChild(node).appendChild(link).appendChild(span);
     }
 
 }
