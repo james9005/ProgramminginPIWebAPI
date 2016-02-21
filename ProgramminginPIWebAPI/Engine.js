@@ -1,6 +1,6 @@
 ﻿//The engine class sorts out the calls to the PI WEB API and does everything with the Dashboard.html page
 
-createSidebarFromAF();
+
 
 var currentServer = currentServerFromHash();
 
@@ -324,7 +324,7 @@ function checkHardwareStatus(current, max) {
     }
 }
 
-function createSidebarFromAF() {
+function createSidebarFromAFManual() {
 
     //create header
     var headerNode = document.createElement("LI");
@@ -375,6 +375,64 @@ function createSidebarFromAF() {
 }
 
 
+function createSidebarFromAF() {
+
+    //create header
+    var headerNode = document.createElement("LI");
+    headerNode.classList.add("header");
+    headerNode.innerHTML = "SERVERS";
+
+    document.getElementById("rightConfigBar").appendChild(headerNode);
+
+    //perform AJAX Call for AF Data
+
+    //this is test data  - return all server names from real data.
+    MakeAjaxRequest("GET", servMonEleUrl, function (data) {
+        //populate the data items
+        
+        var dataItm = [];
+        
+        for (var i = 0; i < data.Items.length; i++) {
+             dataItm.push(data.Items[i].Name);
+        }
+        
+
+
+        //should be currently active rather than the first line
+        //first line of data (needs to be applied to the current HTML URL also.
+        var node = document.createElement("LI");
+        node.classList.add("active");
+        var link = document.createElement("a");
+        link.setAttribute("href", ("#" + dataItm[0]));
+        //add icons 
+        var icon = document.createElement("i");
+        icon.classList.add("fa");
+        icon.classList.add("fa-server");
+        //add span
+        var span = document.createElement("span");
+        span.innerHTML = dataItm[0];
+        location.hash = dataItm[0];
+        node.appendChild(link).appendChild(icon);
+        document.getElementById("rightConfigBar").appendChild(node).appendChild(link).appendChild(span);
+
+
+        for (var i = 1; i < dataItm.length; i++) {
+            var node = document.createElement("LI");
+            var link = document.createElement("a");
+            link.setAttribute("href", ("#" + dataItm[i]));
+            //add icons 
+            var icon = document.createElement("i");
+            icon.classList.add("fa");
+            icon.classList.add("fa-server");
+            //add span
+            var span = document.createElement("span");
+            span.innerHTML = dataItm[i];
+            node.appendChild(link).appendChild(icon);
+            document.getElementById("rightConfigBar").appendChild(node).appendChild(link).appendChild(span);
+        }
+    });
+}
+
 
 
 //call all methods
@@ -382,8 +440,8 @@ function createSidebarFromAF() {
 
 
 //only works when connected to the PI web api
-//updateCPUChart();
+updateCPUChart();
 
-updateCPUChartRandomData();
+//updateCPUChartRandomData();
 updateAllHardware();
-
+createSidebarFromAF();
