@@ -433,6 +433,15 @@ function createSidebarFromAF() {
     });
 }
 
+/**
+This function updates the server header with the current server selected
+*/
+function updateServerHeader() {
+    var headerStr = location.hash;
+    headerStr = headerStr.substr(1);
+    document.getElementById("ServerHeader").innerHTML = headerStr;
+    setTimeout(updateServerHeader, 3000);
+}
 
 
 //call all methods
@@ -445,3 +454,5 @@ updateCPUChart();
 //updateCPUChartRandomData();
 updateAllHardware();
 createSidebarFromAF();
+updateServerHeader();
+
