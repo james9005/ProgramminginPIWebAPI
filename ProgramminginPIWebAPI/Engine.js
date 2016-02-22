@@ -1,9 +1,12 @@
 ﻿//The engine class sorts out the calls to the PI WEB API and does everything with the Dashboard.html page
 
 
+updateServerHeader();
+
+
 
 var currentServer = currentServerFromHash();
-
+var checked = false;
 
 
 
@@ -11,7 +14,7 @@ var currentServer = currentServerFromHash();
 var baseUrl = "https://JDTSQL01/piwebapi";
 var servMonEleUrl = "https://jdtsql01/piwebapi/assetdatabases/D05JhvKQzPtUy9eDHPqXqv3Qdem0i04ALk-N4rffsusiEQSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkc/elements";
 var exValUrl = "https://jdtsql01/piwebapi/streams/A0E5JhvKQzPtUy9eDHPqXqv3QnC15Pb3R5RGAwgAMKQjVsgH11WupCmAF0BK4-t_MLgZwSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkdcSkRUUEkwMXxDUFUgVEVNUA/value";
-var cpulisturl = "https://jdtsql01/piwebapi/streams/A0E5JhvKQzPtUy9eDHPqXqv3QnC15Pb3R5RGAwgAMKQjVsgH11WupCmAF0BK4-t_MLgZwSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkdcSkRUUEkwMXxDUFUgVEVNUA/recorded?startTime=*-7d";
+var cpulisturl = "https://jdtsql01/piwebapi/streams/A0E5JhvKQzPtUy9eDHPqXqv3QnC15Pb3R5RGAwgAMKQjVsgH11WupCmAF0BK4-t_MLgZwSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkdcSkRUUEkwMXxDUFUgVEVNUA/recorded?startTime=*-15d";
 
 /**
 This gets the Server names from the AF Server database for the monitoring (and displays them in a select box with the id of select).
@@ -101,7 +104,7 @@ function updateCPUChart() {
             //Boolean - Whether to show vertical lines (except Y axis)
             scaleShowVerticalLines: true,
             //Boolean - Whether the line is curved between points
-            bezierCurve: true,
+            bezierCurve: checkBezier(),
             //Number - Tension of the bezier curve between points
             bezierCurveTension: 0.3,
             //Boolean - Whether to show a dot for each point
@@ -132,7 +135,7 @@ function updateCPUChart() {
         //update the chart with random data ever 3000 ms (3 seconds).
         //TODO: change this to a WEB API call rather than that of random data.
         //TODO: work out the timing of the pi web API so this doesnt look stupid. (looking at about 3 minutes maybe?).
-        setTimeout(updateCPUChart, 30000);
+        setTimeout(updateCPUChart, 999);
     });
 
 }
@@ -336,7 +339,7 @@ function createSidebarFromAFManual() {
     //perform AJAX Call for AF Data
 
     //this is test data  - return all server names from real data.
-    var data = ["JDTSQL01", "JDTPI01","CCA-PI-01","CCA-SQL-01", "JDT-UPS-01"];
+    var data = ["JDTSQL01", "JDTPI01", "CCA-PI-01", "CCA-SQL-01", "JDT-UPS-01"];
 
 
     //should be currently active rather than the first line
@@ -358,7 +361,7 @@ function createSidebarFromAFManual() {
 
 
     for (var i = 1; i < data.length; i++) {
-        var node = document.createElement("LI");       
+        var node = document.createElement("LI");
         var link = document.createElement("a");
         link.setAttribute("href", ("#" + data[i]));
         //add icons 
@@ -389,13 +392,13 @@ function createSidebarFromAF() {
     //this is test data  - return all server names from real data.
     MakeAjaxRequest("GET", servMonEleUrl, function (data) {
         //populate the data items
-        
+
         var dataItm = [];
-        
+
         for (var i = 0; i < data.Items.length; i++) {
-             dataItm.push(data.Items[i].Name);
+            dataItm.push(data.Items[i].Name);
         }
-        
+
 
 
         //should be currently active rather than the first line
@@ -439,20 +442,37 @@ This function updates the server header with the current server selected
 function updateServerHeader() {
     var headerStr = location.hash;
     headerStr = headerStr.substr(1);
+    console.log(headerStr);
     document.getElementById("ServerHeader").innerHTML = headerStr;
     setTimeout(updateServerHeader, 3000);
 }
 
+function checkBezier() {
+    if($("#bezierCheckbox").is(":checked")){
+        return true;
+    }
+    else return false;
+}
+
+
+function changeBezier() {
+    if (checkBezier) {
+
+        $('#bezierCheckbox').attr("checked", false).checkboxradio("refresh");
+        updateCPUChart();
+    }
+    else {
+        $("#bezierCheckbox").prop('checked', true).checkboxradio("refresh");
+        updateCPUChart();
+    }
+}
 
 //call all methods
-
-
-
 //only works when connected to the PI web api
 updateCPUChart();
 
 //updateCPUChartRandomData();
 updateAllHardware();
 createSidebarFromAF();
-updateServerHeader();
+
 
