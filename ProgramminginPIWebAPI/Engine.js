@@ -459,11 +459,11 @@ function changeBezier() {
     if (checkBezier) {
 
         $('#bezierCheckbox').attr("checked", false).checkboxradio("refresh");
-        updateCPUChart();
+        
     }
     else {
         $("#bezierCheckbox").prop('checked', true).checkboxradio("refresh");
-        updateCPUChart();
+       
     }
 }
 
