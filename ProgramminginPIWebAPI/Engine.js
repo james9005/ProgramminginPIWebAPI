@@ -189,7 +189,7 @@ function updateCPUChartRandomData() {
         //Boolean - Whether to show vertical lines (except Y axis)
         scaleShowVerticalLines: true,
         //Boolean - Whether the line is curved between points
-        bezierCurve: true,
+        bezierCurve: checkBezier(),
         //Number - Tension of the bezier curve between points
         bezierCurveTension: 0.3,
         //Boolean - Whether to show a dot for each point
@@ -468,11 +468,13 @@ function changeBezier() {
 }
 
 //call all methods
-//only works when connected to the PI web api
-updateCPUChart();
+//These methods only works when connected to the PI web api
 
-//updateCPUChartRandomData();
+//updateCPUChart();
+//createSidebarFromAF();
+
+updateCPUChartRandomData();
 updateAllHardware();
-createSidebarFromAF();
+createSidebarFromAFManual();
 
 
