@@ -348,6 +348,7 @@ function createSidebarFromAFManual() {
     node.classList.add("active");
     var link = document.createElement("a");
     link.setAttribute("href", ("#" + data[0]));
+    link.setAttribute("onClick", ("switchAF(\'" + data[i] +"\')"));
     //add icons 
     var icon = document.createElement("i");
     icon.classList.add("fa");
@@ -364,6 +365,7 @@ function createSidebarFromAFManual() {
         var node = document.createElement("LI");
         var link = document.createElement("a");
         link.setAttribute("href", ("#" + data[i]));
+        link.setAttribute("onclick", ("switchAF(\'" + data[i]+"\')"));
         //add icons 
         var icon = document.createElement("i");
         icon.classList.add("fa");
@@ -467,6 +469,11 @@ function changeBezier() {
     }
 }
 
+function switchAF(str)
+{
+    alert(str);
+    //do something 
+}
 //call all methods
 //These methods only works when connected to the PI web api
 
