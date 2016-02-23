@@ -483,9 +483,12 @@ function changeBezier() {
 function switchAF(str) {
     //alert(str);
     //do something 
+    //make the correct area active
     $("#rightConfigBar>li.active").removeClass("active");
     document.getElementById(str).classList.add("active");
 
+    //load in the correct area graphs / data points
+    
 }
 //call all methods
 //These methods only works when connected to the PI web api
