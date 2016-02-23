@@ -339,7 +339,7 @@ function createSidebarFromAFManual() {
     //perform AJAX Call for AF Data
 
     //this is test data  - return all server names from real data.
-    var data = ["JDTSQL01", "JDTPI01", "CCA-PI-01", "CCA-SQL-01", "JDT-UPS-01"];
+    var data = ["JDTSQL01", "JDTPI01", "JDT-UPS-01"];
 
 
     //should be currently active rather than the first line
@@ -486,6 +486,8 @@ function switchAF(str) {
     //make the correct area active
     $("#rightConfigBar>li.active").removeClass("active");
     document.getElementById(str).classList.add("active");
+
+
 
     //load in the correct area graphs / data points
     
