@@ -409,8 +409,11 @@ function createSidebarFromAF() {
         //first line of data (needs to be applied to the current HTML URL also.
         var node = document.createElement("LI");
         node.classList.add("active");
+        node.setAttribute("id", dataItm[0]);
+
         var link = document.createElement("a");
         link.setAttribute("href", ("#" + dataItm[0]));
+        link.setAttribute("onClick", ("switchAF(\'" + dataItm[0] + "\')"));
         //add icons 
         var icon = document.createElement("i");
         icon.classList.add("fa");
@@ -425,8 +428,10 @@ function createSidebarFromAF() {
 
         for (var i = 1; i < dataItm.length; i++) {
             var node = document.createElement("LI");
+            node.setAttribute("id", dataItm[i]);
             var link = document.createElement("a");
             link.setAttribute("href", ("#" + dataItm[i]));
+            link.setAttribute("onClick", ("switchAF(\'" + dataItm[i] + "\')"));
             //add icons 
             var icon = document.createElement("i");
             icon.classList.add("fa");
@@ -471,22 +476,26 @@ function changeBezier() {
     }
 }
 
+/*
+    This method switches the AF Servers 
+
+*/
 function switchAF(str)
 {
     //alert(str);
     //do something 
     $("#rightConfigBar>li.active").removeClass("active");
     document.getElementById(str).classList.add("active");
-    updateServerHeader();
+    
 }
 //call all methods
 //These methods only works when connected to the PI web api
 
-//updateCPUChart();
-//createSidebarFromAF();
+updateCPUChart();
+createSidebarFromAF();
 
-updateCPUChartRandomData();
+//updateCPUChartRandomData();
 updateAllHardware();
-createSidebarFromAFManual();
+//createSidebarFromAFManual();
 
 
