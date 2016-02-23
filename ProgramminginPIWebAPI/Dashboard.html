@@ -105,7 +105,7 @@ desired effect
                     SERVER NAME GOES HERE
                     <small id="addServerHeader">additional information goes here about server.</small>
                 </h1>
-                
+
             </section>
             <!-- Main content -->
             <section class="content">
@@ -210,19 +210,39 @@ desired effect
             <!-- Create the tabs -->
             <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
                 <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
-                
+
             </ul>
             <!-- Tab panes -->
             <div class="tab-content">
                 <!-- Home tab content -->
                 <div class="tab-pane active" id="control-sidebar-home-tab">
                     <h3 class="control-sidebar-heading">General Settings</h3>
-                <!-- TODO: add general settings  -->
-                <br />
+                    <!-- TODO: add general settings  -->
+                    <br />
                     <h5 class="control-sidebar-heading">Graph Settings</h5>
                     <label class="control-sidebar-subheading">
                         Toggle Bezier Curve
                         <input class="pull-right" type="checkbox" name="bezierCheckbox" id="bezierCheckbox" checked onclick="changeBezier" />
+                    </label>
+                    <br />
+                    <h5 class="control-sidebar-subheading">Timeline</h5>
+
+                    <label class="control-sidebar-subheading">
+                        -1d
+                        <input class="pull-right" type="radio" name="optradio">
+                    </label>
+                    <label class="control-sidebar-subheading">
+                        -7d
+                        <input class="pull-right" type="radio" name="optradio">
+                    </label>
+
+                    <label class="control-sidebar-subheading">
+                        -14d
+                        <input class="pull-right" type="radio" name="optradio">
+                    </label>
+                    <label class="control-sidebar-subheading">
+                        -28d
+                        <input class="pull-right" type="radio" name="optradio">
                     </label>
                 </div><!-- /.tab-pane -->
                 <!-- Stats tab content -->
