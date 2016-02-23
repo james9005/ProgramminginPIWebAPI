@@ -490,7 +490,24 @@ function switchAF(str) {
 
 
     //load in the correct area graphs / data points
-    
+
+}
+
+/*
+    This method changes the url of the PIWebAPI search for CPU Data and changes the timescales.
+*/
+function changeChartUrl(days) {
+
+    var lastThree = cpulisturl.substr(cpulisturl.length - 3);
+    alert(cpulisturl);
+    if (days < 10) {
+        cpulisturl = cpulisturl.replace(lastThree, ("0" + days + "d"));
+    }
+    else {
+        cpulisturl = cpulisturl.replace(lastThree, (days + "d"));
+    }
+    alert(cpulisturl);
+
 }
 //call all methods
 //These methods only works when connected to the PI web api
@@ -501,6 +518,7 @@ function switchAF(str) {
 
 
 //------ manual Data 
+changeChartUrl(5);
 updateCPUChartRandomData();
 updateAllHardware();
 createSidebarFromAFManual();
