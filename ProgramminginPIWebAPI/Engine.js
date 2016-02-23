@@ -349,7 +349,7 @@ function createSidebarFromAFManual() {
     node.setAttribute("id", data[0]);
     var link = document.createElement("a");
     link.setAttribute("href", ("#" + data[0]));
-    link.setAttribute("onClick", ("switchAF(\'" + data[0] +"\')"));
+    link.setAttribute("onClick", ("switchAF(\'" + data[0] + "\')"));
     //add icons 
     var icon = document.createElement("i");
     icon.classList.add("fa");
@@ -367,7 +367,7 @@ function createSidebarFromAFManual() {
         node.setAttribute("id", data[i]);
         var link = document.createElement("a");
         link.setAttribute("href", ("#" + data[i]));
-        link.setAttribute("onclick", ("switchAF(\'" + data[i]+"\')"));
+        link.setAttribute("onclick", ("switchAF(\'" + data[i] + "\')"));
         //add icons 
         var icon = document.createElement("i");
         icon.classList.add("fa");
@@ -457,7 +457,7 @@ function updateServerHeader() {
 }
 
 function checkBezier() {
-    if($("#bezierCheckbox").is(":checked")){
+    if ($("#bezierCheckbox").is(":checked")) {
         return true;
     }
     else return false;
@@ -468,11 +468,11 @@ function changeBezier() {
     if (checkBezier) {
 
         $('#bezierCheckbox').attr("checked", false).checkboxradio("refresh");
-        
+
     }
     else {
         $("#bezierCheckbox").prop('checked', true).checkboxradio("refresh");
-       
+
     }
 }
 
@@ -480,22 +480,24 @@ function changeBezier() {
     This method switches the AF Servers 
 
 */
-function switchAF(str)
-{
+function switchAF(str) {
     //alert(str);
     //do something 
     $("#rightConfigBar>li.active").removeClass("active");
     document.getElementById(str).classList.add("active");
-    
+
 }
 //call all methods
 //These methods only works when connected to the PI web api
 
-updateCPUChart();
-createSidebarFromAF();
+//------ pulled from PIWebAPI
+//updateCPUChart();
+//createSidebarFromAF();
 
-//updateCPUChartRandomData();
+
+//------ manual Data 
+updateCPUChartRandomData();
 updateAllHardware();
-//createSidebarFromAFManual();
+createSidebarFromAFManual();
 
 
