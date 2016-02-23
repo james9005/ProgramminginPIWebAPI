@@ -495,6 +495,7 @@ function switchAF(str) {
 
 /*
     This method changes the url of the PIWebAPI search for CPU Data and changes the timescales.
+    TODO: test this with the PI Web API.
 */
 function changeChartUrl(days) {
 
@@ -518,7 +519,7 @@ function changeChartUrl(days) {
 
 
 //------ manual Data 
-changeChartUrl(5);
+//changeChartUrl(5);
 updateCPUChartRandomData();
 updateAllHardware();
 createSidebarFromAFManual();
