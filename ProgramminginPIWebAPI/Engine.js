@@ -346,9 +346,10 @@ function createSidebarFromAFManual() {
     //first line of data (needs to be applied to the current HTML URL also.
     var node = document.createElement("LI");
     node.classList.add("active");
+    node.setAttribute("id", data[0]);
     var link = document.createElement("a");
     link.setAttribute("href", ("#" + data[0]));
-    link.setAttribute("onClick", ("switchAF(\'" + data[i] +"\')"));
+    link.setAttribute("onClick", ("switchAF(\'" + data[0] +"\')"));
     //add icons 
     var icon = document.createElement("i");
     icon.classList.add("fa");
@@ -363,6 +364,7 @@ function createSidebarFromAFManual() {
 
     for (var i = 1; i < data.length; i++) {
         var node = document.createElement("LI");
+        node.setAttribute("id", data[i]);
         var link = document.createElement("a");
         link.setAttribute("href", ("#" + data[i]));
         link.setAttribute("onclick", ("switchAF(\'" + data[i]+"\')"));
@@ -446,7 +448,7 @@ function updateServerHeader() {
     headerStr = headerStr.substr(1);
     console.log(headerStr);
     document.getElementById("ServerHeader").innerHTML = headerStr;
-    setTimeout(updateServerHeader, 3000);
+    setTimeout(updateServerHeader, 500);
 }
 
 function checkBezier() {
@@ -471,8 +473,11 @@ function changeBezier() {
 
 function switchAF(str)
 {
-    alert(str);
+    //alert(str);
     //do something 
+    $("#rightConfigBar>li.active").removeClass("active");
+    document.getElementById(str).classList.add("active");
+    updateServerHeader();
 }
 //call all methods
 //These methods only works when connected to the PI web api
