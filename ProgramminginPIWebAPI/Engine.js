@@ -240,7 +240,6 @@ function getCurrentValue() {
 
 }
 
-//TODO: update with data from the PIWebAPI
 function updateAllHardwareManual() {
     var randomValue = (Math.random() * 100);
 
@@ -298,6 +297,66 @@ function updateAllHardwareManual() {
     setTimeout(updateAllHardwareManual, 3000);
 
 }
+
+// TODO: this has to pull from the web api.
+function updateAllHardware() {
+    var randomValue = (Math.random() * 100);
+
+    // RAM
+    // TODO: these values will be replaced with values from the PIWebAPi -- depending on what server is selected display the change
+
+    var currentRamValue = 4.8;
+    var maxRamValue = 8;
+    var ramUnits = "GB";
+
+
+    document.getElementById("ramUsage").innerHTML = (currentRamValue + " / " + maxRamValue + " " + ramUnits);
+    document.getElementById("ramUsageValue").style.width = ((currentRamValue / maxRamValue) * 100) + '%';
+    document.getElementById("ramUsageValue").setAttribute("class", "progress " + checkHardwareStatus(currentRamValue, maxRamValue));
+
+
+    //C:/
+    //these values will be replaced with values from the PIWebAPI
+
+    var currentCValue = 566;
+    var maxCValue = 1000;
+    var cUnits = "GB";
+
+    document.getElementById("cUsage").innerHTML = (currentCValue + " / " + maxCValue + " " + cUnits);
+    document.getElementById("cUsageValue").style.width = ((currentCValue / maxCValue) * 100) + '%';
+    document.getElementById("cUsageValue").setAttribute("class", "progress " + checkHardwareStatus(currentCValue, maxCValue));
+
+
+    //D:/
+    //these values will be replaced with values from the PIWebAPI
+
+
+    var currentDValue = 1433;
+    var maxDValue = 5000;
+    var dUnits = "GB";
+
+    document.getElementById("dUsage").innerHTML = (currentDValue + " / " + maxDValue + " " + dUnits);
+    document.getElementById("dUsageValue").style.width = ((currentDValue / maxDValue) * 100) + '%';
+    document.getElementById("dUsageValue").setAttribute("class", "progress " + checkHardwareStatus(currentDValue, maxDValue));
+
+    //Other
+    //these values will be replaced with values from the PIWebAPI
+    //TODO:this should be set to the correct thing remember not math.random
+    var currentOtherValue = Math.round((Math.random() * 500));
+    var maxOtherValue = 500;
+    var otherUnits = "GB";
+
+    document.getElementById("otherUsage").innerHTML = (currentOtherValue + " / " + maxOtherValue + " " + otherUnits);
+    document.getElementById("otherUsageValue").style.width = ((currentOtherValue / maxOtherValue) * 100) + '%';
+    document.getElementById("otherUsageValue").setAttribute("class", "progress " + checkHardwareStatus(currentOtherValue, maxOtherValue));
+
+
+
+    //sets a timeout for the hardware section to update.
+    setTimeout(updateAllHardware, 3000);
+
+}
+
 
 /**
 The checkHardwareStatus looks at the percent of the passed paramaters
@@ -509,6 +568,7 @@ function changeChartUrl(days) {
 
 //updateCPUChart();
 //createSidebarFromAF();
+
 
 
 
