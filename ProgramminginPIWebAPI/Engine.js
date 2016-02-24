@@ -49,7 +49,7 @@ function MakeAjaxRequest(type, url, SuccessCallBack, data) {
         success: SuccessCallBack,
         error: (function (error, variable) {
             console.log(error);
-            alert('There was an error with the request');
+            alert('There was an error with the request to the PI Web API. Please check connections or contact the relevant person');
         })
     });
 }
