@@ -6,7 +6,7 @@ updateServerHeader();
 
 
 var currentServer = currentServerFromHash();
-var checked = false;
+
 
 
 
