@@ -241,7 +241,7 @@ function getCurrentValue() {
 }
 
 //TODO: update with data from the PIWebAPI
-function updateAllHardware() {
+function updateAllHardwareManual() {
     var randomValue = (Math.random() * 100);
 
     // RAM
@@ -295,7 +295,7 @@ function updateAllHardware() {
 
 
     //sets a timeout for the hardware section to update.
-    setTimeout(updateAllHardware, 3000);
+    setTimeout(updateAllHardwareManual, 3000);
 
 }
 
@@ -506,18 +506,23 @@ function changeChartUrl(days) {
 //These methods only works when connected to the PI web api
 
 //------ pulled from PIWebAPI
+
 //updateCPUChart();
 //createSidebarFromAF();
 
 
 
 //------ manual Data 
-//changeChartUrl(5);
+
 updateCPUChartRandomData();
-updateAllHardware();
+updateAllHardwareManual();
 createSidebarFromAFManual();
 
+//TODO: POST METHOD FOR THE WORLD MAP MARKERS
+
+
 // adding this in for testing purposes
+//TODO: get this working with the PI WEB API
 $(function () {
     $('#world-map-markers').vectorMap({
         map: 'world_mill_en',
