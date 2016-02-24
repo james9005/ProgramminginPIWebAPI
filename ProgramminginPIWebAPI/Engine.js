@@ -224,7 +224,6 @@ function updateCPUChartRandomData() {
 
 }
 
-
 //TODO work on this function
 function getCurrentValue() {
 
@@ -239,8 +238,6 @@ function getCurrentValue() {
 
 
 }
-
-
 
 function printHardware(buttonStr) {
 
@@ -514,14 +511,15 @@ function changeChartUrl(days) {
 //These methods only works when connected to the PI web api
 
 //------ pulled from PIWebAPI
-updateCPUChart();
-createSidebarFromAF();
+//updateCPUChart();
+//createSidebarFromAF();
+
 
 
 //------ manual Data 
 //changeChartUrl(5);
-//updateCPUChartRandomData();
+updateCPUChartRandomData();
 updateAllHardware();
-//createSidebarFromAFManual();
+createSidebarFromAFManual();
 
 
