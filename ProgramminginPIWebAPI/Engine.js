@@ -502,7 +502,7 @@ This function updates the server header with the current server selected
 function updateServerHeader() {
     var headerStr = location.hash;
     headerStr = headerStr.substr(1);
-    console.log(headerStr);
+    
     document.getElementById("ServerHeader").innerHTML = headerStr;
     setTimeout(updateServerHeader, 500);
 }
