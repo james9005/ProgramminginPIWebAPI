@@ -583,6 +583,7 @@ createSidebarFromAFManual();
 
 // adding this in for testing purposes
 //TODO: get this working with the PI WEB API
+//MAP: change to UK.
 $(function () {
     $('#world-map-markers').vectorMap({
         map: 'world_mill_en',
