@@ -500,14 +500,14 @@ function switchAF(str) {
 function changeChartUrl(days) {
 
     var lastThree = cpulisturl.substr(cpulisturl.length - 3);
-    alert(cpulisturl);
+    //alert(cpulisturl);
     if (days < 10) {
         cpulisturl = cpulisturl.replace(lastThree, ("0" + days + "d"));
     }
     else {
         cpulisturl = cpulisturl.replace(lastThree, (days + "d"));
     }
-    alert(cpulisturl);
+    //alert(cpulisturl);
 
 }
 //call all methods
