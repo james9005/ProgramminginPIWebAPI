@@ -18,6 +18,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="plugins/jvectormap/jquery-jvectormap-1.2.2.css">
     <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
           page. However, you can choose any other skin. Make sure you
           apply the skin class to the body tag so the changes take effect.
@@ -197,6 +198,44 @@ desired effect
                         </div><!-- /.info-box -->
                     </div><!-- /.col -->
                 </div><!-- /.row -->
+                <div class="box box-success">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Visitors Report</h3>
+                        <div class="box-tools pull-right">
+                            <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                            <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                        </div>
+                    </div><!-- /.box-header -->
+                    <div class="box-body no-padding">
+                        <div class="row">
+                            <div class="col-md-9 col-sm-8">
+                                <div class="pad">
+                                    <!-- Map will be created here -->
+                                    <div id="world-map-markers" style="height: 325px;"></div>
+                                </div>
+                            </div><!-- /.col -->
+                            <div class="col-md-3 col-sm-4">
+                                <div class="pad box-pane-right bg-green" style="min-height: 280px">
+                                    <div class="description-block margin-bottom">
+                                        <div class="sparkbar pad" data-color="#fff">90,70,90,70,75,80,70</div>
+                                        <h5 class="description-header">8390</h5>
+                                        <span class="description-text">Visits</span>
+                                    </div><!-- /.description-block -->
+                                    <div class="description-block margin-bottom">
+                                        <div class="sparkbar pad" data-color="#fff">90,50,90,70,61,83,63</div>
+                                        <h5 class="description-header">30%</h5>
+                                        <span class="description-text">Referrals</span>
+                                    </div><!-- /.description-block -->
+                                    <div class="description-block">
+                                        <div class="sparkbar pad" data-color="#fff">90,50,90,70,61,83,63</div>
+                                        <h5 class="description-header">70%</h5>
+                                        <span class="description-text">Organic</span>
+                                    </div><!-- /.description-block -->
+                                </div>
+                            </div><!-- /.col -->
+                        </div><!-- /.row -->
+                    </div><!-- /.box-body -->
+                </div>
             </section><!-- /.content -->
         </div><!-- /.content-wrapper -->
         <!-- Main Footer -->
@@ -263,10 +302,13 @@ desired effect
     <!-- AdminLTE App -->
     <script src="dist/js/app.min.js"></script>
     <script src="plugins/chartjs/Chart.min.js"></script>
-    <script src="Engine.js"></script>
+    <script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
     <!-- Optionally, you can add Slimscroll and FastClick plugins.
          Both of these plugins are recommended to enhance the
          user experience. Slimscroll is required when using the
          fixed layout. -->
+    <script src="Engine.js"></script>
+
 </body>
 </html>
