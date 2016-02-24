@@ -73,7 +73,7 @@ function updateCPUChart() {
             label.push(data.Items[i].Timestamp);
             datavals.push(data.Items[i].Value);
         }
-        
+
         var salesChartData = {
             labels: label,
             datasets: [
@@ -470,7 +470,7 @@ function createSidebarFromAF() {
         //add span
         var span = document.createElement("span");
         span.innerHTML = dataItm[0];
-        location.hash ="/"+ dataItm[0];
+        location.hash = "/" + dataItm[0];
         node.appendChild(link).appendChild(icon);
         document.getElementById("rightConfigBar").appendChild(node).appendChild(link).appendChild(span);
 
@@ -500,7 +500,7 @@ This function updates the server header with the current server selected
 function updateServerHeader() {
     var headerStr = location.hash;
     headerStr = headerStr.substr(2);
-    
+
     document.getElementById("ServerHeader").innerHTML = headerStr;
     setTimeout(updateServerHeader, 500);
 }
