@@ -37,6 +37,7 @@ function currentServerFromHash() {
 
 /**
 The Make Ajax Request returns a data object (JSON format) back to the caller
+This class can be used for POST, GET and PATCH operations (given the correct parameters).
 */
 function MakeAjaxRequest(type, url, SuccessCallBack, data) {
     $.ajax({
