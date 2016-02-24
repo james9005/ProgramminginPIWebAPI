@@ -240,12 +240,6 @@ function getCurrentValue() {
 
 }
 
-function printHardware(buttonStr) {
-
-    alert("you pressed the " + buttonStr);
-
-}
-
 //TODO: update with data from the PIWebAPI
 function updateAllHardware() {
     var randomValue = (Math.random() * 100);
