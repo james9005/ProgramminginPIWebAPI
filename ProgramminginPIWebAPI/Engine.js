@@ -357,7 +357,6 @@ function updateAllHardware() {
 
 }
 
-
 /**
 The checkHardwareStatus looks at the percent of the passed paramaters
 */
@@ -399,7 +398,7 @@ function createSidebarFromAFManual() {
     node.classList.add("active");
     node.setAttribute("id", data[0]);
     var link = document.createElement("a");
-    link.setAttribute("href", ("#" + data[0]));
+    link.setAttribute("href", ("#/" + data[0]));
     link.setAttribute("onClick", ("switchAF(\'" + data[0] + "\')"));
     //add icons 
     var icon = document.createElement("i");
@@ -408,7 +407,7 @@ function createSidebarFromAFManual() {
     //add span
     var span = document.createElement("span");
     span.innerHTML = data[0];
-    location.hash = data[0];
+    location.hash = "/" + data[0];
     node.appendChild(link).appendChild(icon);
     document.getElementById("rightConfigBar").appendChild(node).appendChild(link).appendChild(span);
 
@@ -417,7 +416,7 @@ function createSidebarFromAFManual() {
         var node = document.createElement("LI");
         node.setAttribute("id", data[i]);
         var link = document.createElement("a");
-        link.setAttribute("href", ("#" + data[i]));
+        link.setAttribute("href", ("#/" + data[i]));
         link.setAttribute("onclick", ("switchAF(\'" + data[i] + "\')"));
         //add icons 
         var icon = document.createElement("i");
@@ -431,7 +430,6 @@ function createSidebarFromAFManual() {
     }
 
 }
-
 
 function createSidebarFromAF() {
 
@@ -463,7 +461,7 @@ function createSidebarFromAF() {
         node.setAttribute("id", dataItm[0]);
 
         var link = document.createElement("a");
-        link.setAttribute("href", ("#" + dataItm[0]));
+        link.setAttribute("href", ("#/" + dataItm[0]));
         link.setAttribute("onClick", ("switchAF(\'" + dataItm[0] + "\')"));
         //add icons 
         var icon = document.createElement("i");
@@ -472,7 +470,7 @@ function createSidebarFromAF() {
         //add span
         var span = document.createElement("span");
         span.innerHTML = dataItm[0];
-        location.hash = dataItm[0];
+        location.hash ="/"+ dataItm[0];
         node.appendChild(link).appendChild(icon);
         document.getElementById("rightConfigBar").appendChild(node).appendChild(link).appendChild(span);
 
@@ -481,7 +479,7 @@ function createSidebarFromAF() {
             var node = document.createElement("LI");
             node.setAttribute("id", dataItm[i]);
             var link = document.createElement("a");
-            link.setAttribute("href", ("#" + dataItm[i]));
+            link.setAttribute("href", ("#/" + dataItm[i]));
             link.setAttribute("onClick", ("switchAF(\'" + dataItm[i] + "\')"));
             //add icons 
             var icon = document.createElement("i");
@@ -501,7 +499,7 @@ This function updates the server header with the current server selected
 */
 function updateServerHeader() {
     var headerStr = location.hash;
-    headerStr = headerStr.substr(1);
+    headerStr = headerStr.substr(2);
     
     document.getElementById("ServerHeader").innerHTML = headerStr;
     setTimeout(updateServerHeader, 500);
@@ -513,7 +511,6 @@ function checkBezier() {
     }
     else return false;
 }
-
 
 function changeBezier() {
     if (checkBezier) {
