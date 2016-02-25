@@ -4,7 +4,6 @@
 updateServerHeader();
 
 
-var currentServer = currentServerFromHash();
 
 getCurrentServerURL();
 
@@ -30,9 +29,6 @@ function getCurrentServerURL() {
         }
 
     });
-
-
-
     setTimeout(getCurrentServerURL, 500);
     //use ajax call to find the correct URL.
 }
@@ -52,9 +48,7 @@ function getAFServers(webAPIURL) {
     });
 }
 
-function currentServerFromHash() {
-    return location.hash;
-}
+
 
 /**
 The Make Ajax Request returns a data object (JSON format) back to the caller
