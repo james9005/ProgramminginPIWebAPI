@@ -14,7 +14,7 @@ var currentServer = currentServerFromHash();
 var baseUrl = "https://JDTSQL01/piwebapi";
 var servMonEleUrl = "https://jdtsql01/piwebapi/assetdatabases/D05JhvKQzPtUy9eDHPqXqv3Qdem0i04ALk-N4rffsusiEQSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkc/elements";
 var exValUrl = "https://jdtsql01/piwebapi/streams/A0E5JhvKQzPtUy9eDHPqXqv3QnC15Pb3R5RGAwgAMKQjVsgH11WupCmAF0BK4-t_MLgZwSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkdcSkRUUEkwMXxDUFUgVEVNUA/value";
-var cpulisturl = "https://jdtsql01/piwebapi/streams/A0E5JhvKQzPtUy9eDHPqXqv3QnC15Pb3R5RGAwgAMKQjVsgH11WupCmAF0BK4-t_MLgZwSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkdcSkRUUEkwMXxDUFUgVEVNUA/recorded?startTime=*-07d";
+var cpulisturl = "https://jdtsql01/piwebapi/streams/A0E5JhvKQzPtUy9eDHPqXqv3QnC15Pb3R5RGAwgAMKQjVsgH11WupCmAF0BK4-t_MLgZwSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkdcSkRUUEkwMXxDUFUgVEVNUA/recorded?startTime=*-28d";
 
 /**
 This gets the Server names from the AF Server database for the monitoring (and displays them in a select box with the id of select).
@@ -563,17 +563,17 @@ function changeChartUrl(days) {
 
 //------ pulled from PIWebAPI
 
-//updateCPUChart();
-//createSidebarFromAF();
+updateCPUChart();
+createSidebarFromAF();
 
 
 
 
 //------ manual Data 
 
-updateCPUChartRandomData();
+//updateCPUChartRandomData();
 updateAllHardwareManual();
-createSidebarFromAFManual();
+//createSidebarFromAFManual();
 
 //TODO: POST METHOD FOR THE WORLD MAP MARKERS
 
