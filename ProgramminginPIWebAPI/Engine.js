@@ -12,6 +12,13 @@ getCurrentServerURL();
 var baseUrl = "https://JDTSQL01/piwebapi";
 var servMonEleUrl = "https://jdtsql01/piwebapi/assetdatabases/D05JhvKQzPtUy9eDHPqXqv3Qdem0i04ALk-N4rffsusiEQSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkc/elements";
 var currentServerUrl = "";
+var ramUrl = "";
+var cUrl = "";
+var dUrl = "";
+var cpu1Url = "";
+var cpu2Url = "";
+var cpu3Url = "";
+var cpu4Url = "";
 var exValUrl = "https://jdtsql01/piwebapi/streams/A0E5JhvKQzPtUy9eDHPqXqv3QnC15Pb3R5RGAwgAMKQjVsgH11WupCmAF0BK4-t_MLgZwSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkdcSkRUUEkwMXxDUFUgVEVNUA/value";
 var cpulisturl = "https://jdtsql01/piwebapi/streams/A0E5JhvKQzPtUy9eDHPqXqv3QnC15Pb3R5RGAwgAMKQjVsgH11WupCmAF0BK4-t_MLgZwSkRUU1FMMDFcU0VSVkVSIE1PTklUT1JJTkdcSkRUUEkwMXxDUFUgVEVNUA/recorded?startTime=*-28d";
 
@@ -22,16 +29,64 @@ function getCurrentServerURL() {
     MakeAjaxRequest("GET", servMonEleUrl, function (data) {
         for (var i = 0; i < data.Items.length; i++) {
             if (data.Items[i].Name === tempLocation) {
-                currentServerUrl = data.Items[i].Links.Elements;
+                currentServerUrl = data.Items[i].Links.Attributes;
                 //console.log("DONE " + currentServerUrl);
+                //console.log(currentServerUrl);
             }
 
         }
 
     });
+
+    //console.log("DONE " + currentServerUrl);
     setTimeout(getCurrentServerURL, 500);
-    //use ajax call to find the correct URL.
+    ////use ajax call to find the correct URL.
 }
+
+function getHWURL() {
+    //getCurrentServerURL();
+
+    MakeAjaxRequest("GET", currentServerUrl, function (data) {
+        for (var i = 0; i < data.Items.length; i++) {
+            if (data.Items[i].Name === "RAMUsage") {
+                ramUrl = data.Items[i].Links.Value;
+                //console.log("RAM " +ramUrl);
+            }
+            if (data.Items[i].Name === "CUsage") {
+                cUrl = data.Items[i].Links.Value;
+                //console.log("C " +cUrl);
+            }
+            if (data.Items[i].Name === "DUsage") {
+
+                dUrl = data.Items[i].Links.Value;
+                //console.log("D " + dUrl);
+            }
+            if (data.Items[i].Name === "CPUClock01") {
+
+                cpu1Url = data.Items[i].Links.Value;
+                //console.log("D " + dUrl);
+            }
+            if (data.Items[i].Name === "CPUClock02") {
+
+                cpu2Url = data.Items[i].Links.Value;
+                //console.log("D " + dUrl);
+            }
+            if (data.Items[i].Name === "CPUClock03") {
+
+                cpu3Url = data.Items[i].Links.Value;
+                //console.log("D " + dUrl);
+            }
+            if (data.Items[i].Name === "CPUClock04") {
+
+                cpu4Url = data.Items[i].Links.Value;
+                //console.log("D " + dUrl);
+            }
+        }
+    });
+
+    setTimeout(getHWURL, 3000);
+}
+
 
 /**
 This gets the Server names from the AF Server database for the monitoring (and displays them in a select box with the id of select).
@@ -316,44 +371,90 @@ function updateAllHardwareManual() {
 // TODO: this has to pull from the web api.
 function updateAllHardware() {
     var randomValue = (Math.random() * 100);
-
-    // RAM
-    // TODO: these values will be replaced with values from the PIWebAPi -- depending on what server is selected display the change
-
-    var currentRamValue = 4.8;
-    var maxRamValue = 8;
-    var ramUnits = "GB";
+    getHWURL();
+    if (ramUrl != "") {
+        // RAM
+        // TODO: these values will be replaced with values from the PIWebAPi -- depending on what server is selected display the change
+        MakeAjaxRequest("GET", ramUrl, function (data) {
 
 
-    document.getElementById("ramUsage").innerHTML = (currentRamValue + " / " + maxRamValue + " " + ramUnits);
-    document.getElementById("ramUsageValue").style.width = ((currentRamValue / maxRamValue) * 100) + '%';
-    document.getElementById("ramUsageValue").setAttribute("class", "progress " + checkHardwareStatus(currentRamValue, maxRamValue));
+            var currentRamValue = data.Value;
+            var maxRamValue = 8;
+            var ramUnits = "GB";
 
 
+            document.getElementById("ramUsage").innerHTML = (currentRamValue + " / " + maxRamValue + " " + ramUnits);
+            document.getElementById("ramUsageValue").style.width = ((currentRamValue / maxRamValue) * 100) + '%';
+            document.getElementById("ramUsageValue").setAttribute("class", "progress " + checkHardwareStatus(currentRamValue, maxRamValue));
+        });
+    }
     //C:/
     //these values will be replaced with values from the PIWebAPI
+    if (cUrl != "") {
+        MakeAjaxRequest("GET", cUrl, function (data) {
 
-    var currentCValue = 566;
-    var maxCValue = 1000;
-    var cUnits = "GB";
+            var currentCValue = data.Value;
+            var maxCValue = 1000;
+            var cUnits = "GB";
 
-    document.getElementById("cUsage").innerHTML = (currentCValue + " / " + maxCValue + " " + cUnits);
-    document.getElementById("cUsageValue").style.width = ((currentCValue / maxCValue) * 100) + '%';
-    document.getElementById("cUsageValue").setAttribute("class", "progress " + checkHardwareStatus(currentCValue, maxCValue));
-
+            document.getElementById("cUsage").innerHTML = (currentCValue + " / " + maxCValue + " " + cUnits);
+            document.getElementById("cUsageValue").style.width = ((currentCValue / maxCValue) * 100) + '%';
+            document.getElementById("cUsageValue").setAttribute("class", "progress " + checkHardwareStatus(currentCValue, maxCValue));
+        });
+    }
 
     //D:/
     //these values will be replaced with values from the PIWebAPI
+    if (dUrl != "") {
+        MakeAjaxRequest("GET", dUrl, function (data) {
 
 
-    var currentDValue = 1433;
-    var maxDValue = 5000;
-    var dUnits = "GB";
+            var currentDValue = data.Value;
+            var maxDValue = 5000;
+            var dUnits = "GB";
 
-    document.getElementById("dUsage").innerHTML = (currentDValue + " / " + maxDValue + " " + dUnits);
-    document.getElementById("dUsageValue").style.width = ((currentDValue / maxDValue) * 100) + '%';
-    document.getElementById("dUsageValue").setAttribute("class", "progress " + checkHardwareStatus(currentDValue, maxDValue));
+            document.getElementById("dUsage").innerHTML = (currentDValue + " / " + maxDValue + " " + dUnits);
+            document.getElementById("dUsageValue").style.width = ((currentDValue / maxDValue) * 100) + '%';
+            document.getElementById("dUsageValue").setAttribute("class", "progress " + checkHardwareStatus(currentDValue, maxDValue));
+        });
+    }
 
+    if (cpu1Url != "") {
+        MakeAjaxRequest("GET", cpu1Url, function (data) {
+
+
+            var cpu1 = data.Value;
+
+            document.getElementById("cpu1").innerHTML = cpu1 + "%";
+        });
+    }
+    if (cpu2Url != "") {
+        MakeAjaxRequest("GET", cpu2Url, function (data) {
+
+
+            var cpu2 = data.Value;
+
+            document.getElementById("cpu2").innerHTML = cpu2 + "%";
+        });
+    }
+    if (cpu3Url != "") {
+        MakeAjaxRequest("GET", cpu3Url, function (data) {
+
+
+            var cpu3 = data.Value;
+
+            document.getElementById("cpu3").innerHTML = cpu3 + "%";
+        });
+    }
+    if (cpu4Url != "") {
+        MakeAjaxRequest("GET", cpu4Url, function (data) {
+
+
+            var cpu4 = data.Value;
+
+            document.getElementById("cpu4").innerHTML = cpu4 + "%";
+        });
+    }
     //Other
     //these values will be replaced with values from the PIWebAPI
     //TODO:this should be set to the correct thing remember not math.random
@@ -550,7 +651,7 @@ function switchAF(str) {
     $("#rightConfigBar>li.active").removeClass("active");
     document.getElementById(str).classList.add("active");
 
-
+    //getHWURL();
 
     //load in the correct area graphs / data points
 
@@ -580,14 +681,14 @@ function changeChartUrl(days) {
 
 updateCPUChart();
 createSidebarFromAF();
-
+updateAllHardware();
 
 
 
 //------ manual Data 
 
 //updateCPUChartRandomData();
-updateAllHardwareManual();
+//updateAllHardwareManual();
 //createSidebarFromAFManual();
 
 //TODO: POST METHOD FOR THE WORLD MAP MARKERS
